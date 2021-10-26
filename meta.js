@@ -2,6 +2,10 @@ module.exports = {
 	env: {commonjs: true, es6: true},
 	extends: "eslint:recommended",
 	rules: {
+		"array-bracket-newline": ["error", "consistent"],
+		"array-bracket-spacing": "error",
+		"array-element-newline": ["error", "consistent"],
+		"arrow-parens": "error",
 		"comma-dangle": ["error", "always-multiline"],
 		"comma-spacing": ["error", {after: true, before: false}],
 		"comma-style": "error",
