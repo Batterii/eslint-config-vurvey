@@ -14,18 +14,19 @@ this package, instead of being repeated in one of the above.
 This package contains three modules, described below. For simplicity and for ESLint support, they
 are written as CommonJS modules in plain JavaScript.
 
-### index
+### index.js
 This module contains the base configuration, containing rules which will be enforced in all
 TypeScript files in all Vurvey-related repositories. With this package installed, this base config
-can be eferenced within a child configuration like so:
+can be referenced within a child configuration like so:
 
 ```yaml
 extends: "@batterii/eslint-config-vurvey"
 ```
 
 ### test.js
-This module extends the base configuration with changes for automated test files written in
-[Mocha][mocha], using [Chai][chai] for assertions and [Sinon][sinon] for test doubles.
+This module contains changes which should be applied to the base config for linting utomated test
+files written in [Mocha][mocha], using [Chai][chai] for assertions and [Sinon][sinon] for test
+doubles.
 
 This `test` config mostly relaxes rules from the base config instead of adding more restrictions.
 This is because such test code has a different purpose than production-ready code, so we need not be
@@ -35,8 +36,15 @@ With this package installed, this `test` config can be referenced within a child
 so:
 
 ```yaml
-extends: "@batterii/eslint-config-vurvey/test"
+extends:
+  - "@batterii/eslint-config-vurvey"
+  - "@batterii/eslint-config-vurvey/test"
 ```
+
+When using the `test` config, both it and the base config should be referenced in this order. This
+is because the `test` config does not actually extend the base config. This approach ensures that
+we only have one inheritance path which brings in the base rules, granting us the control we need
+for deriving the environment-specific configs.
 
 ### meta.js
 This module contains configuration intended to be used for linting this project and other ESLint

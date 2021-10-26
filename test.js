@@ -1,6 +1,5 @@
 module.exports = {
 	env: {mocha: true},
-	extends: "./index.js",
 	rules: {
 		// Allow test files to play more loosely with types.
 		"@typescript-eslint/explicit-function-return-type": "off",
