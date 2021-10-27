@@ -145,8 +145,8 @@ and concerns.
 ## Publishing
 `npm version` and `npm publish` can be used to publish this package as normal. These should be run
 in the latest `main` branch by someone with write access to the package on NPM. When doing so, a
-`prepublishOnly` script will automatically push the verison number commmit and tag to the
-GitHub repo.
+`preversion` script will lint the repo and a `prepublishOnly` script will automatically push the
+verison number commmit and tag to the GitHub repo.
 
 Note that ESLint configuration changes can have massive effects on other developers and code bases.
 When publishing a new version of this package, a [breaking release][semver] should be made if one or
