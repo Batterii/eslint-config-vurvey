@@ -75,25 +75,37 @@ module.exports = {
 };
 ```
 
-Finally, create a file called `index.js` with the following contents:
+Next, create a file called `base.js` with the following contents:
 
 ```js
 module.exports = {
-	extends: [
-		"@batterii/eslint-config-vurvey/base",
-	],
+	extends: "@batterii/eslint-config-vurvey/base",
 	overrides: [{
 		extends: "./test.js",
 		files: ["*.test.ts"],
 	}],
 };
-
 ```
 
-You can edit either of these files to make environment-specific changes to the base config.
-`index.js` should be used for the main config, and `test.js` should include overrides specific to
-test files. If your test files may have different extensions than the ones listed in `index.js`,
-you'll want to make sure to add these to the `files` array under `overrides`.
+Finally, create a file called `index.js` with the following contents:
+
+```js
+module.exports = {
+	extends: "./base.js",
+	overrides: [{
+		extends: "./test.js",
+		files: ["*.test.ts"],
+	}],
+};
+```
+
+You can further these files to make environment-specific changes. `main.js` should be used for the
+main config, and `test.js` should include overrides specific to test files. If your test files may
+have different extensions than the ones listed in `index.js`, you'll want to make sure to add these
+to the `files` array under `overrides`.
+
+`index.js` should only be responsible for bringing together the main config and the test config. It
+should not be edited to contain rule definitions of its own.
 
 If you add any rules which rely on ESLint plugins, these plugins should be listed as peer
 dependencies instead of direct dpeendencies. See the
