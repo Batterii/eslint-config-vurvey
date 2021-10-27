@@ -1,5 +1,8 @@
 module.exports = {
-	env: {commonjs: true, es6: true},
+	env: {
+		commonjs: true,
+		es6: true,
+	},
 	extends: "eslint:recommended",
 	rules: {
 		"array-bracket-newline": ["error", "consistent"],
