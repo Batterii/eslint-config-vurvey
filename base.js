@@ -12,7 +12,7 @@ module.exports = {
 		project: "./tsconfig.json",
 	},
 	plugins: [
-		"typescript-eslint",
+		"@typescript-eslint",
 	],
 	rules: {
 		"@typescript-eslint/ban-ts-comment": "error",
