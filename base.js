@@ -81,7 +81,7 @@ module.exports = {
 		"@typescript-eslint/unified-signatures": "error",
 		"accessor-pairs": "error",
 		"array-bracket-newline": ["error", "consistent"],
-		"array-bracket-spacing": ["error", {arraysInArrays: true}],
+		"array-bracket-spacing": ["error", "never", {arraysInArrays: true}],
 		"array-callback-return": "error",
 		"array-element-newline": ["error", "consistent"],
 		"arrow-parens": "as-needed",
