@@ -84,7 +84,7 @@ module.exports = {
 		"array-bracket-spacing": ["error", "never", {arraysInArrays: true}],
 		"array-callback-return": "error",
 		"array-element-newline": ["error", "consistent"],
-		"arrow-parens": "as-needed",
+		"arrow-parens": ["error", "as-needed"],
 		"block-spacing": "error",
 		"brace-style": "error",
 		"camelcase": "off", // Replaced by @typescript-eslint/naming-convention
