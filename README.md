@@ -182,8 +182,19 @@ For more information about this approach, see [this Node.js blog post][peer-deps
 subject.
 
 
+### ESLint 8
+This package lists ESLint 7 as a peer dependency instead of the lastest ESLint 8. This is
+necessary for the time being as the downstream [@batteriii/eslint-config-vurvey-react][react-config]
+package depends on [eslint-plugin-react][eslint-plugin-react], which has not yet been updated with
+support for ESLint 8.
+
+[This issue](https://github.com/yannickcr/eslint-plugin-react/issues/3055) should be checked for
+updates so that we can migrate to ESLint 8 as soon as we are able.
+
+
 [eslint]: https://eslint.org/
 [eslint-ext]: https://eslint.org/docs/user-guide/configuring/configuration-files#extending-configuration-files
+[eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
 [eslint-share]: https://eslint.org/docs/developer-guide/shareable-configs
 [node-config]: https://github.com/Batterii/eslint-config-vurvey-node
 [peer-deps]: https://docs.npmjs.com/cli/v7/configuring-npm/package-json#peerdependencies
