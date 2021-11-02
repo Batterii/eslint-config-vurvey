@@ -20,7 +20,7 @@ module.exports = {
 		"@typescript-eslint/explicit-member-accessibility": ["error", {accessibility: "no-public"}],
 		"@typescript-eslint/func-call-spacing": "error",
 		"@typescript-eslint/indent": ["error", "tab", {SwitchCase: 1}],
-		"@typescript-eslint/member-ordering": "error",
+		"@typescript-eslint/member-ordering": "off",
 		"@typescript-eslint/naming-convention": [
 			"error",
 			/* eslint-disable sort-keys */
