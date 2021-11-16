@@ -77,6 +77,7 @@ module.exports = {
 		"@typescript-eslint/require-await": "error",
 		"@typescript-eslint/restrict-plus-operands": "error",
 		"@typescript-eslint/semi": "error",
+		"@typescript-eslint/switch-exhaustiveness-check": "error",
 		"@typescript-eslint/unbound-method": "error",
 		"@typescript-eslint/unified-signatures": "error",
 		"accessor-pairs": "error",
