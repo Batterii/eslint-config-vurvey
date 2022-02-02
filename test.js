@@ -21,7 +21,7 @@ module.exports = {
 		// Allow test declarations to exceed max line length.
 		"max-len": ["error", {
 			code: 100,
-			ignorePattern: "^\\s*(?:it|specify|describe|context)(?:\.skip)?\\(",
+			ignorePattern: "^\\s*(?:it|specify|describe|context)(?:\\.skip)?\\(",
 		}],
 
 		// Prevent `only` from being left on a test or test group.
