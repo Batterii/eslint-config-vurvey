@@ -99,7 +99,7 @@ module.exports = {
 		"dot-location": ["error", "property"],
 		"dot-notation": "error",
 		"eol-last": "error",
-		"eqeqeq": "error",
+		"eqeqeq": ["error", "always", {null: "ignore"}],
 		"func-call-spacing": "off", // Replaced in typescript-eslint
 		"func-names": "off",
 		"function-paren-newline": ["error", "multiline-arguments"],
