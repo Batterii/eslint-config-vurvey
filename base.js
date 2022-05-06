@@ -21,40 +21,6 @@ module.exports = {
 		"@typescript-eslint/func-call-spacing": "error",
 		"@typescript-eslint/indent": ["error", "tab", {SwitchCase: 1}],
 		"@typescript-eslint/member-ordering": "off",
-		"@typescript-eslint/naming-convention": [
-			"error",
-			/* eslint-disable sort-keys */
-			{
-				selector: "default",
-				format: ["camelCase", "PascalCase"],
-			},
-			{
-				selector: "parameter",
-				format: ["camelCase", "PascalCase"],
-				leadingUnderscore: "allow",
-			},
-			{
-				selector: "memberLike",
-				modifiers: ["private"],
-				format: ["camelCase"],
-				leadingUnderscore: "require",
-			},
-			{
-				selector: "memberLike",
-				modifiers: ["protected"],
-				format: ["camelCase"],
-				leadingUnderscore: "require",
-			},
-			{
-				selector: ["typeLike", "enumMember"],
-				format: ["PascalCase"],
-			},
-			{
-				selector: "typeParameter",
-				format: ["PascalCase"],
-			},
-			/* eslint-enable sort-keys */
-		],
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/no-extra-parens": ["error", "all", {
 			enforceForArrowConditionals: false,
@@ -88,7 +54,7 @@ module.exports = {
 		"arrow-parens": ["error", "as-needed"],
 		"block-spacing": "error",
 		"brace-style": "error",
-		"camelcase": "off", // Replaced by @typescript-eslint/naming-convention
+		"camelcase": "off",
 		"class-methods-use-this": "warn",
 		"comma-dangle": ["error", "always-multiline"],
 		"comma-spacing": ["error"],
