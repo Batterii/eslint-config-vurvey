@@ -77,7 +77,7 @@ module.exports = {
 		"linebreak-style": ["error", "unix"],
 		"lines-between-class-members": ["error", "always", {exceptAfterSingleLine: true}],
 		"max-classes-per-file": "warn",
-		"max-len": ["error", {code: 100}],
+		"max-len": ["error", {code: 100, tabWidth: 2}],
 		"max-statements-per-line": "error",
 		"multiline-ternary": ["error", "always-multiline"],
 		"new-cap": "warn",
