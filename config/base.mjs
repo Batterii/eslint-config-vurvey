@@ -11,12 +11,6 @@ export default tseslint.config(globalIgnores(["dist"]), {
 	rules: {
 		// TypeScript rules
 		"@typescript-eslint/ban-ts-comment": "warn",
-		"@typescript-eslint/explicit-function-return-type": [
-			"error",
-			{
-				allowExpressions: true,
-			},
-		],
 		"@typescript-eslint/explicit-member-accessibility": [
 			"error",
 			{
@@ -24,7 +18,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 			},
 		],
 		"@typescript-eslint/member-ordering": "off",
-		"@typescript-eslint/no-explicit-any": "off",
+		"@typescript-eslint/no-explicit-any": "warn",
 		"@typescript-eslint/no-extraneous-class": "error",
 		"@typescript-eslint/no-for-in-array": "error",
 		"@typescript-eslint/no-misused-promises": "error",

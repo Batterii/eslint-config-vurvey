@@ -16,16 +16,6 @@ Disallows `@ts-<directive>` comments (like `@ts-ignore`, `@ts-nocheck`, `@ts-exp
 
 ---
 
-### @typescript-eslint/explicit-function-return-type
-
-**Setting:** `error` with `allowExpressions: true`
-
-Requires explicit return types on functions and class methods. The `allowExpressions` option allows omitting return types for function expressions (callbacks, arrow functions passed as arguments).
-
-[Rule Documentation](https://typescript-eslint.io/rules/explicit-function-return-type/)
-
----
-
 ### @typescript-eslint/explicit-member-accessibility
 
 **Setting:** `error` with `accessibility: "no-public"`
@@ -48,9 +38,9 @@ Disabled. When enabled, enforces a consistent order for class members (propertie
 
 ### @typescript-eslint/no-explicit-any
 
-**Setting:** `off`
+**Setting:** `warn`
 
-Disabled. When enabled, disallows usage of the `any` type.
+Produces an warning when the `any` type is used.
 
 [Rule Documentation](https://typescript-eslint.io/rules/no-explicit-any/)
 
