@@ -1,14 +1,47 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
+import importPlugin from "eslint-plugin-import";
 
 export default tseslint.config(globalIgnores(["dist"]), {
 	files: ["**/*.{ts,tsx,js,jsx,mjs}"],
-	extends: [js.configs.recommended, tseslint.configs.recommended],
+	extends: [
+		js.configs.recommended,
+		tseslint.configs.recommended,
+		importPlugin.flatConfigs.recommended,
+		importPlugin.flatConfigs.typescript,
+	],
 	languageOptions: {
 		ecmaVersion: 2020,
+		parserOptions: {
+			projectService: true,
+		},
+	},
+	settings: {
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"],
+		},
+		"import/resolver": {
+			typescript: true,
+			node: true,
+		},
 	},
 	rules: {
+		"import/order": [
+			"warn",
+			{
+				groups: [
+					"builtin",
+					"external",
+					"internal",
+					"parent",
+					"sibling",
+					"index",
+				],
+				"newlines-between": "always",
+				alphabetize: { order: "asc" },
+			},
+		],
 		// TypeScript rules
 		"@typescript-eslint/ban-ts-comment": "warn",
 		"@typescript-eslint/explicit-member-accessibility": [
@@ -96,7 +129,6 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"no-lone-blocks": "error",
 		"no-lonely-if": "error",
 		"no-multi-str": "error",
-		"no-negated-condition": "error",
 		"no-nested-ternary": "error",
 		"no-object-constructor": "error",
 		"no-new": "error",

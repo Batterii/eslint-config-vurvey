@@ -538,16 +538,6 @@ Disallows multiline strings using backslash continuation. Use template literals 
 
 ---
 
-### no-negated-condition
-
-**Setting:** `error`
-
-Disallows negated conditions in `if-else` statements when flipping would be clearer.
-
-[Rule Documentation](https://eslint.org/docs/latest/rules/no-negated-condition)
-
----
-
 ### no-nested-ternary
 
 **Setting:** `error`
