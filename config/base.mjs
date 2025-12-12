@@ -33,9 +33,9 @@ export default tseslint.config(globalIgnores(["dist"]), {
 				groups: [
 					"builtin",
 					"external",
-					"internal",
 					"parent",
 					"sibling",
+					"internal",
 					"index",
 				],
 				"newlines-between": "always",
