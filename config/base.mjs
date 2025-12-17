@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
 import importPlugin from "eslint-plugin-import";
+import stylistic from "@stylistic/eslint-plugin";
 
 export default tseslint.config(globalIgnores(["dist"]), {
 	files: ["**/*.{ts,tsx,js,jsx,mjs}"],
@@ -16,6 +17,9 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		parserOptions: {
 			projectService: true,
 		},
+	},
+	plugins: {
+		"@stylistic": stylistic,
 	},
 	settings: {
 		"import/parsers": {
@@ -42,6 +46,9 @@ export default tseslint.config(globalIgnores(["dist"]), {
 				alphabetize: { order: "asc" },
 			},
 		],
+		// stylistic rules
+		"@stylistic/multiline-ternary": ["error", "always-multiline"],
+		"@stylistic/indent": ["error", "tab"],
 		// TypeScript rules
 		"@typescript-eslint/ban-ts-comment": "warn",
 		"@typescript-eslint/explicit-member-accessibility": [
@@ -116,12 +123,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"no-eval": "error",
 		"no-extend-native": "error",
 		"no-extra-bind": "error",
-		"no-implicit-coercion": [
-			"error",
-			{
-				boolean: false,
-			},
-		],
+		"no-implicit-coercion": "error",
 		"no-implied-eval": "error",
 		"no-invalid-this": "error",
 		"no-iterator": "error",

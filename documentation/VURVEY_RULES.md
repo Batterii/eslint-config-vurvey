@@ -4,6 +4,40 @@ This document explains all explicitly declared rules in the ESLint configuration
 
 ---
 
+## Import Rules
+
+### import/order
+
+**Setting:** `warn` with custom group ordering
+
+Enforces a consistent ordering of import statements. Groups imports in the following order: builtin, external, parent, sibling, internal, index. Requires newlines between groups and alphabetizes imports within each group.
+
+[Rule Documentation](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/order.md)
+
+---
+
+## Stylistic Rules
+
+### @stylistic/multiline-ternary
+
+**Setting:** `error` with `"always-multiline"`
+
+Enforces newlines between the operands of a ternary expression if the expression spans multiple lines. Allows single-line ternaries when the entire expression fits on one line.
+
+[Rule Documentation](https://eslint.style/rules/js/multiline-ternary)
+
+---
+
+### @stylistic/indent
+
+**Setting:** `error` with `"tab"`
+
+Enforces consistent indentation using tabs.
+
+[Rule Documentation](https://eslint.style/rules/js/indent)
+
+---
+
 ## TypeScript Rules
 
 ### @typescript-eslint/ban-ts-comment
@@ -462,7 +496,7 @@ Disallows unnecessary `.bind()` calls on functions that don't use `this`.
 
 **Setting:** `error` with `boolean: false`
 
-Disallows shorthand type conversions (like `+"5"` for numbers), except for boolean coercion (`!!value`).
+Disallows shorthand type conversions (like `+"5"` for numbers, !!value for booleans, etc)
 
 [Rule Documentation](https://eslint.org/docs/latest/rules/no-implicit-coercion)
 
