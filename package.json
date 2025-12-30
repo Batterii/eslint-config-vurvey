@@ -1,28 +1,38 @@
 {
 	"name": "@batterii/eslint-config-vurvey",
-	"version": "0.3.9",
+	"version": "1.0.3",
 	"description": "Base ESLint configuration for Vurvey TypeScript projects",
 	"author": "Batterii, LLC",
 	"license": "MIT",
 	"repository": "github:Batterii/eslint-config-vurvey",
 	"files": [
-		"base.js",
-		"index.js",
-		"meta.js",
-		"test.js"
+		"config/",
+		"legacy-config/",
+		"flat/",
+		"oxlint/"
 	],
+	"exports": {
+		".": "./config/index.mjs",
+		"./oxlint/.oxlintrc.json": "./oxlint/.oxlintrc.json"
+	},
 	"scripts": {
 		"lint": "eslint .",
 		"lintf": "eslint . --fix",
 		"preversion": "npm run lint",
 		"prepublishOnly": "git push && git push --tags"
 	},
-	"devDependencies": {
-		"eslint": "^7.32.0"
-	},
 	"peerDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.3.0",
-		"@typescript-eslint/parser": "^5.3.0",
-		"eslint": "^7.13.0"
+		"eslint": "^9.39.1"
+	},
+	"optionalDependencies": {
+		"oxlint": "^1.31.0",
+		"oxlint-tsgolint": "^0.8.3"
+	},
+	"dependencies": {
+		"@eslint/js": "^9.39.1",
+		"@stylistic/eslint-plugin": "^5.6.1",
+		"eslint-import-resolver-typescript": "^4.4.4",
+		"eslint-plugin-import": "^2.32.0",
+		"typescript-eslint": "^8.48.1"
 	}
 }
