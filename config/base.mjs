@@ -63,7 +63,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"@typescript-eslint/no-for-in-array": "error",
 		"@typescript-eslint/no-misused-promises": "error",
 		"@typescript-eslint/no-require-imports": "error",
-		"@typescript-eslint/no-shadow": "error",
+		"@typescript-eslint/no-shadow": "off",
 		"@typescript-eslint/no-unnecessary-qualifier": "error",
 		"@typescript-eslint/no-unnecessary-type-assertion": "error",
 		"@typescript-eslint/no-use-before-define": [
@@ -105,7 +105,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"no-await-in-loop": "warn",
 		"no-bitwise": "warn",
 		"no-caller": "error",
-		"no-console": "error",
+		"no-console": ["error", {allow: ["warn", "error"]}],
 		"no-div-regex": "error",
 		"no-dupe-class-members": "off",
 		"no-duplicate-imports": [
@@ -151,13 +151,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"no-template-curly-in-string": "warn",
 		"no-throw-literal": "error",
 		"no-undef-init": "error",
-		"no-underscore-dangle": [
-			"error",
-			{
-				allowAfterSuper: true,
-				allowAfterThis: true,
-			},
-		],
+		"no-underscore-dangle": ["off"],
 		"no-unmodified-loop-condition": "error",
 		"no-unneeded-ternary": [
 			"error",
