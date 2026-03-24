@@ -1,17 +1,12 @@
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import { globalIgnores } from "eslint/config";
-import importPlugin from "eslint-plugin-import";
+import perfectionist from "eslint-plugin-perfectionist";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default tseslint.config(globalIgnores(["dist"]), {
 	files: ["**/*.{ts,tsx,js,jsx,mjs}"],
-	extends: [
-		js.configs.recommended,
-		tseslint.configs.recommended,
-		importPlugin.flatConfigs.recommended,
-		importPlugin.flatConfigs.typescript,
-	],
+	extends: [js.configs.recommended, tseslint.configs.recommended],
 	languageOptions: {
 		ecmaVersion: 2020,
 		parserOptions: {
@@ -20,20 +15,23 @@ export default tseslint.config(globalIgnores(["dist"]), {
 	},
 	plugins: {
 		"@stylistic": stylistic,
-	},
-	settings: {
-		"import/parsers": {
-			"@typescript-eslint/parser": [".ts", ".tsx"],
-		},
-		"import/resolver": {
-			typescript: true,
-			node: true,
-		},
+		perfectionist,
 	},
 	rules: {
-		"import/order": [
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": [
+			"error",
+			{
+				varsIgnorePattern: "^_{1,2}",
+				argsIgnorePattern: "^_{1,2}",
+			},
+		],
+		"perfectionist/sort-imports": [
 			"warn",
 			{
+				type: "alphabetical",
+				order: "asc",
+				newlinesBetween: 1,
 				groups: [
 					"builtin",
 					"external",
@@ -42,8 +40,6 @@ export default tseslint.config(globalIgnores(["dist"]), {
 					"internal",
 					"index",
 				],
-				"newlines-between": "always",
-				alphabetize: { order: "asc" },
 			},
 		],
 		// stylistic rules
@@ -78,7 +74,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"@typescript-eslint/prefer-regexp-exec": "error",
 		"@typescript-eslint/prefer-string-starts-ends-with": "error",
 		"@typescript-eslint/promise-function-async": "off",
-		"@typescript-eslint/require-await": "error",
+		"@typescript-eslint/require-await": "warn",
 		"@typescript-eslint/restrict-plus-operands": "error",
 		"@typescript-eslint/switch-exhaustiveness-check": "error",
 		"@typescript-eslint/unbound-method": "error",
@@ -102,10 +98,15 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"max-classes-per-file": "warn",
 		"new-cap": "warn",
 		"no-array-constructor": "error",
-		"no-await-in-loop": "warn",
+		"no-await-in-loop": "off",
 		"no-bitwise": "warn",
 		"no-caller": "error",
-		"no-console": ["error", {allow: ["warn", "error"]}],
+		"no-console": [
+			"error",
+			{
+				allow: ["warn", "info", "error"],
+			},
+		],
 		"no-div-regex": "error",
 		"no-dupe-class-members": "off",
 		"no-duplicate-imports": [
@@ -151,7 +152,7 @@ export default tseslint.config(globalIgnores(["dist"]), {
 		"no-template-curly-in-string": "warn",
 		"no-throw-literal": "error",
 		"no-undef-init": "error",
-		"no-underscore-dangle": ["off"],
+		"no-underscore-dangle": "off",
 		"no-unmodified-loop-condition": "error",
 		"no-unneeded-ternary": [
 			"error",
