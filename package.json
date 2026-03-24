@@ -22,15 +22,15 @@
 		"prepublishOnly": "git push && git push --tags"
 	},
 	"peerDependencies": {
-		"eslint": "^10.1.0",
+		"eslint": "^9.7",
 		"oxlint": "^1.57.0",
 		"oxlint-tsgolint": "^0.17.3"
 	},
 	"dependencies": {
-		"@eslint/js": "^10.0.1",
-		"@stylistic/eslint-plugin": "^5.10.0",
+		"@eslint/js": "^9.39.2",
+		"@stylistic/eslint-plugin": "^5.7.0",
 		"eslint-plugin-perfectionist": "^5.7.0",
 		"globals": "^17.4.0",
-		"typescript-eslint": "^8.57.2"
+		"typescript-eslint": "^8.53.1"
 	}
 }
