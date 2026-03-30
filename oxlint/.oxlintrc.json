@@ -100,7 +100,7 @@
 		"@typescript-eslint/return-await": "error",
 		"array-callback-return": "error",
 		"class-methods-use-this": "warn",
-		"curly": ["error", "multi-line", "consistent"],
+		"curly": ["warn", "multi-line", "consistent"],
 		"eqeqeq": [
 			"error",
 			"always",
