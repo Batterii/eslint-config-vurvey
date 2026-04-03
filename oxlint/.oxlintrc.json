@@ -7,6 +7,7 @@
 	"env": {
 		"builtin": true
 	},
+	"ignorePatterns": ["**/generated/**"],
 	"rules": {
 		"for-direction": "error",
 		"no-async-promise-executor": "error",
@@ -140,7 +141,7 @@
 		"no-lone-blocks": "error",
 		"no-lonely-if": "error",
 		"no-multi-str": "error",
-		"no-negated-condition": "error",
+		"no-negated-condition": "off",
 		"no-nested-ternary": "warn",
 		"no-object-constructor": "error",
 		"no-new": "error",
