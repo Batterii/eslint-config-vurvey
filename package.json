@@ -1,6 +1,6 @@
 {
   "name": "@batterii/eslint-config-vurvey",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "description": "Base lint configuration for Vurvey TypeScript projects",
   "license": "MIT",
   "author": "Batterii, LLC",
