@@ -203,6 +203,19 @@
 			"env": {
 				"mocha": true
 			}
+		},
+		{
+			"files": ["**/migrations/**/*.ts", "**/tasks/**/*.ts"],
+			"rules": {
+				"no-console": "off",
+				"no-plusplus": "off"
+			}
+		},
+		{
+			"files": ["**/batch-loaders/**/*.ts"],
+			"rules": {
+				"class-methods-use-this": "off"
+			}
 		}
 	]
 }
